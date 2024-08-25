@@ -1,0 +1,48 @@
+// C++ program for creating a string 
+// by alternately combining the
+// characters of two halves 
+// in reverse 
+#include <bits/stdc++.h>
+using namespace std;
+
+// Function performing calculations
+void solve(string s)
+{
+	int l = s.length();
+	int x = l / 2;
+	int y = l;
+	
+	// Calculating the two halves
+	// of string s as first and 
+	// second. The final string p
+	string p = "";
+	while (x > 0 && y > l / 2) {
+		
+		// It joins the characters to
+		// final string in reverse order
+		p += s[x - 1];
+		x--;
+		
+		// It joins the characters to
+		// final string in reverse order
+		p += s[y - 1];
+		y--;
+	}
+	
+	if (y > l / 2) {
+		p += s[y - 1];
+		y--;
+	}
+	
+	cout << p;
+}
+
+// Driver code
+int main()
+{
+	string s = "sunshine";
+	
+	// Calling function
+	solve(s);
+	return 0;
+}
